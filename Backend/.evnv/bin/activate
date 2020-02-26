@@ -37,7 +37,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/nandana/Restaurants/Backend/.evnv"
+VIRTUAL_ENV="/home/nandan/Restaurants/Backend/.evnv"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

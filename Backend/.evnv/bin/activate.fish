@@ -29,7 +29,7 @@ end
 # unset irrelevant variables
 deactivate nondestructive
 
-set -gx VIRTUAL_ENV "/home/nandana/Restaurants/Backend/.evnv"
+set -gx VIRTUAL_ENV "/home/nandan/Restaurants/Backend/.evnv"
 
 set -gx _OLD_VIRTUAL_PATH $PATH
 set -gx PATH "$VIRTUAL_ENV/bin" $PATH
