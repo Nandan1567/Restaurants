@@ -5,50 +5,31 @@ import axios from 'axios'
 class AddRecipes extends Component{
   constructor(props){
     super(props)
-    this.state={
-      'name':'',
-      'image':'',
-      'discription':'',
-    }
-  }
-
-  addRecipes()
-  {
-    
-    if(this.state.firstName !== '' ){
-      this.props.recipesinfo(this.state);
-      this.setState({
-        'name':'',
-        'image':'',
-        'discription':''
-      })
-    }
-    else{
-      alert('Please enter all fields!!!')
-    }
+   this.state = {
+      name: '',
+      discription: '',
+      image:'',
+    };
   
   }
+
+ 
   render(){
     return(
       <div>
-    name  <input type="text" onChange={(event) =>this.setState({'name':event.target.value})}/> 
-      image<input type="text" onChange={(event) =>this.setState({'image':event.target.value})}/>
-      discription<input type="text" onChange={(event) =>this.setState({'discription':event.target.value})}/>
-      <Button type="button" onClick={this.addRecipes}>submit</Button>
-      search<input type="text" onChange={(event)=> this.props.searchInfo(event.target.value)} />
+       <input type="text" placeholder="search Recipes" onChange={(event)=> this.props.searchInfo(event.target.value)}  />
        </div>
+       
     )
   }
 }
-
-
-
 
  class Home extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      recipes: []
+      recipes: [],
+      query: '',
     }
     this.refreshList=this.refreshList.bind(this);
     this.DeleteList=this.DeleteList.bind(this);
@@ -91,17 +72,17 @@ searchField(text)
 
   render() {
     return (
-
-      <div style={{display: 'flex',justifyContent:'flex-start',flexDirection:'row', flexWrap: "wrap"}}>
+      <div style={{marginTop:'100px'}}>
+    
       <AddRecipes recipesinfo={this.textshow} searchInfo={this.searchField}/>
-      {this.state.recipes
-      //   .filter((rname) => {
-      //     return rname.name.toLowerCase().includes(this.state.query.toLowerCase())
-         
-      //  })
+      <div style={{display: 'flex',justifyContent:'flex-start',flexDirection:'row', flexWrap: "wrap"}}>
+      {this.state.recipes.filter((bname) => {
+          return bname.name.toLowerCase().includes(this.state.query.toLowerCase())
+        })
        .map((item,index)=>(
+        
         <CardGroup style={{ paddingTop: 20, paddingLeft: 10, paddingRight: 10, }} key={index}>
-          <Card style={{ paddingLeft: 20, paddingRight: 20, paddingTop: 20 }}>
+          <Card style={{ paddingLeft: 20, paddingRight: 20, paddingTop: 20,background:'none' }}>
             <Card.Img variant="top" style={{ width: 200, height: 200 }} src={item.image} />
             <Card.Body>
               <Card.Title style={{ flexWrap: "nowrap", width: 200 }} >{item.name} </Card.Title>
@@ -111,8 +92,11 @@ searchField(text)
             </Card.Body>
           </Card>
         </CardGroup>
+      
         ))}
       </div>
+      </div>
+    
     )
   }
 }
