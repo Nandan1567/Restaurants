@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Button, Card,CardGroup} from 'react-bootstrap';
 import axios from 'axios'
+import {Link} from 'react-router-dom';
 
 class AddRecipes extends Component{
   constructor(props){
@@ -17,6 +18,9 @@ class AddRecipes extends Component{
   render(){
     return(
       <div>
+        <div id="admin">
+      <Link to ='/login'>Admin</Link>
+      </div>
        <input type="text" placeholder="search Recipes" onChange={(event)=> this.props.searchInfo(event.target.value)}  />
        </div>
        
@@ -70,6 +74,8 @@ searchField(text)
   })
 }
 
+
+
   render() {
     return (
       <div style={{marginTop:'100px'}}>
@@ -83,15 +89,18 @@ searchField(text)
         
         <CardGroup style={{ paddingTop: 20, paddingLeft: 10, paddingRight: 10, }} key={index}>
           <Card style={{ paddingLeft: 20, paddingRight: 20, paddingTop: 20,background:'none' }}>
-            <Card.Img variant="top" style={{ width: 200, height: 200 }} src={item.image} />
+          {/* <Card.Img variant="top" style={{ width: 200, height: 200 }} src={item.image} />   */}
             <Card.Body>
               <Card.Title style={{ flexWrap: "nowrap", width: 200 }} >{item.name} </Card.Title>
               <Card.Text style={{ flexWrap: "nowrap", width: 200 }} >  {item.discription}  </Card.Text>
-              <Card.Text>
-                <Button onClick={(event) => this.DeleteList(item.pk)}variant="info">  <a style={{ textDecoration: 'none', color: 'white' }}>Delete</a></Button>                                </Card.Text>
-            </Card.Body>
+               <Card.Text>
+                 {/* <Button onClick={(event) => this.DeleteList(item.pk)}variant="info">  <a style={{ textDecoration: 'none', color: 'white' }}>More De..</a></Button>  */}
+                 <Button variant="info">  <a style={{textDecoration: 'none', color: 'white'}} href={item.image} >more</a></Button>                                </Card.Text>
+                
+           </Card.Body>
           </Card>
         </CardGroup>
+      
       
         ))}
       </div>

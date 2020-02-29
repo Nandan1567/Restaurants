@@ -9,4 +9,12 @@ class Recipes(models.Model):
 
     def __str__(self):
         return self.name
+    
+    class Meta:
+        verbose_name_plural = "Recipes"
 
+    def get_image(self):
+        return 'http://127.0.0.1:8000/'+self.image.url 
+
+    def get_discription(self):
+        return 'http://127.0.0.1:8000/'+self.discription.url

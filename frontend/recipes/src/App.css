@@ -13,3 +13,88 @@ body
   width: 100%;
   height: 30px;
 }
+#box
+{
+
+  margin: 80px;
+  width:100%;
+  height:500px;
+  background-color: antiquewhite;
+  transition-delay: 10s;
+  box-shadow: 5px 5px 5px rgb(218, 214, 214);
+  display: flex;
+  flex-direction: row;
+}
+.image
+{
+  display: flex;
+  justify-content: flex-start;
+  padding: 20px;
+}
+.title
+{
+  flex-direction: column;
+  color: black;
+  display: flex;
+}
+#heading
+{
+  font-size:50px;
+  padding: 20px;
+  
+}
+#descriptions
+{
+  padding-top:30px ;
+  font-size: 20px;
+  
+}
+.disp
+{
+  width: 200px;
+  height:200px ;
+}
+
+#login
+{
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+
+  
+}
+.loginpage
+{
+  padding-top: 30px;
+  width: 400px;
+  height: 200px;
+  background-color: aquamarine;
+
+  
+}
+
+#signup
+{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: black;
+
+}
+
+.signuppage
+{
+  padding-top: 30px;
+  width: 400px;
+  height: 300px;
+  background-color: aquamarine;
+}
+#admin
+{
+  display: flex;
+  justify-content: flex-end;
+  font-size: 30px;
+  color: black;
+}

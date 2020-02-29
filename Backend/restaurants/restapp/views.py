@@ -9,6 +9,7 @@ from .serializers import RecipesListSerializer
 class RecipesListAPIView(ListAPIView):
     queryset = Recipes.objects.all()
     serializer_class = RecipesListSerializer
+    
 
 
 class RecipesPostAPIView(CreateAPIView):
